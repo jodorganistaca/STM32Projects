@@ -5,5 +5,7 @@ int main(void){
 	//00000000 00001110 
 	RCC -> APB2ENR |= (0x01 << 2) | (0x01 << 3)	| (0x01 << 4);
 	
-	while(1);
+	do
+	{
+	} while (1);
 }
