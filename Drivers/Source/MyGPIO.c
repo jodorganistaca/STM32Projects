@@ -2,7 +2,6 @@
 
 void MyGPIO_Init(MyGPIO_Struct_TypeDef * GPIOStructPtr){
 	// Configure it (page 171):
-	int a = 1;
 	if (GPIOStructPtr->GPIO_Pin < 8) { //We use CRL in this case
 		GPIOStructPtr->GPIO->CRL &=~ (0xF << (GPIOStructPtr->GPIO_Pin * 4) ); //Reset field
 		GPIOStructPtr->GPIO->CRL |= (GPIOStructPtr->GPIO_Conf << (GPIOStructPtr->GPIO_Pin * 4)); //Set field
@@ -13,7 +12,6 @@ void MyGPIO_Init(MyGPIO_Struct_TypeDef * GPIOStructPtr){
 	
 	// If we use Pull Up or Pull Down we have to initialize the ODR bit
 	if(GPIOStructPtr->GPIO_Conf == In_PullUp){
-		a = 2;
 		GPIOStructPtr->GPIO->ODR |= 0x1 << GPIOStructPtr->GPIO_Pin;
 	}else if(GPIOStructPtr -> GPIO_Conf == In_PullDown){
 		GPIOStructPtr->GPIO->ODR &= ~(0x1 << GPIOStructPtr->GPIO_Pin);

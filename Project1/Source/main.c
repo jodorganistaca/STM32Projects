@@ -10,15 +10,15 @@ int main(void){
 	RCC -> APB2ENR |= RCC_APB2ENR_IOPCEN;
 	
 	//Config Led
-	led.GPIO = GPIOC;
-	led.GPIO_Pin = 10;
+	led.GPIO = GPIOA;
+	led.GPIO_Pin = 5;
 	led.GPIO_Conf = Out_PushPull;
 	MyGPIO_Init(&led);
 	
 	//Config button
 	btn.GPIO = GPIOC;
-	btn.GPIO_Pin = 8;
-	btn.GPIO_Pin = In_PullUp;
+	btn.GPIO_Pin = 13;
+	btn.GPIO_Conf = In_PullUp;
 	MyGPIO_Init(&btn);
 	
 	do
