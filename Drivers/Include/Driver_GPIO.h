@@ -9,6 +9,7 @@ typedef struct
 	char GPIO_Conf; //below
 } MyGPIO_Struct_TypeDef;
 
+//Page 160
 #define In_Floating 			0x4//0100
 #define In_PullDown 			0x8//1000
 #define In_PullUp 				0x8//1000
@@ -18,9 +19,10 @@ typedef struct
 #define AltOut_PushPull		0x9//10-01	Max. output speed (01: 10 MHz | 10:  2 MHz | 11: 50 MHz)
 #define AltOut_OpenDrain	0x13//11-01	Max. output speed (01: 10 MHz | 10:  2 MHz | 11: 50 MHz)
 
-void MyGPIO_Init (MyGPIO_Struct_TypeDef * GPIOStrucPtr);
-int MyGPIO_Read (MyGPIO_Struct_TypeDef * GPIO, char GPIO_pin); //0 or different
-void MyGPIO_Set (MyGPIO_Struct_TypeDef * GPIO, char GPIO_pin);
-void MyGPIO_Reset (MyGPIO_Struct_TypeDef * GPIO, char GPIO_pin);
+void MyGPIO_Init (MyGPIO_Struct_TypeDef * GPIOStructPtr);
+int MyGPIO_Read (GPIO_TypeDef * GPIO, char GPIO_pin); //0 or different
+void MyGPIO_Set (GPIO_TypeDef * GPIO, char GPIO_pin);
+void MyGPIO_Reset (GPIO_TypeDef * GPIO, char GPIO_pin);
+void MyGPIO_Toggle (GPIO_TypeDef * GPIO, char GPIO_pin);
 
 #endif

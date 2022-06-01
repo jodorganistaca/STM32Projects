@@ -388,10 +388,32 @@
               <FileType>1</FileType>
               <FilePath>.\Source\main.c</FilePath>
             </File>
+            <File>
+              <FileName>MyGPIO.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\Source\MyGPIO.c</FilePath>
+            </File>
+            <File>
+              <FileName>MyTimer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\Source\MyTimer.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>Drivers</GroupName>
+          <Files>
+            <File>
+              <FileName>Driver_GPIO.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Drivers\Include\Driver_GPIO.h</FilePath>
+            </File>
+            <File>
+              <FileName>Driver_Timer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Drivers\Include\Driver_Timer.h</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>::CMSIS</GroupName>
@@ -783,10 +805,32 @@
               <FileType>1</FileType>
               <FilePath>.\Source\main.c</FilePath>
             </File>
+            <File>
+              <FileName>MyGPIO.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\Source\MyGPIO.c</FilePath>
+            </File>
+            <File>
+              <FileName>MyTimer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\Source\MyTimer.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>Drivers</GroupName>
+          <Files>
+            <File>
+              <FileName>Driver_GPIO.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Drivers\Include\Driver_GPIO.h</FilePath>
+            </File>
+            <File>
+              <FileName>Driver_Timer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\Drivers\Include\Driver_Timer.h</FilePath>
+            </File>
+          </Files>
         </Group>
         <Group>
           <GroupName>::CMSIS</GroupName>
