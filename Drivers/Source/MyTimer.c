@@ -9,7 +9,7 @@ void (* pointer4) (void);
 void MyTimer_Base_Init ( MyTimer_Struct_TypeDef * TimerStruct)
 {
 	if(TimerStruct->Timer==TIM1){
-		//RCC->APB2ENR |= RCC_APB1ENR_TIM1EN;
+		RCC->APB2ENR |= RCC_APB2ENR_TIM1EN;
 	}else if(TimerStruct->Timer==TIM2){
 		RCC->APB1ENR |= RCC_APB1ENR_TIM2EN;
 	}
@@ -29,6 +29,11 @@ void MyTimer_Base_Init ( MyTimer_Struct_TypeDef * TimerStruct)
 void MyTimer_ActiveIT  (TIM_TypeDef * Timer , char Prio , void (*IT_function ) (void) ) 
 {
 	Timer->DIER |= TIM_DIER_UIE;
+	if(Timer==TIM1){
+		NVIC_SetPriority(TIM1_UP_IRQn, Prio);
+		NVIC_EnableIRQ(TIM1_UP_IRQn);
+		pointer1 = IT_function;
+	}
 	if(Timer==TIM2){
 		NVIC_SetPriority(TIM2_IRQn, Prio);
 		NVIC_EnableIRQ(TIM2_IRQn);
