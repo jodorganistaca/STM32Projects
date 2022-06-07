@@ -128,10 +128,10 @@ void TIM1_IRQHandler (void){
 
 }
 
-void TIM2_IRQHandler (void ){
+/*void TIM2_IRQHandler (void ){
 	TIM2->SR &= ~(TIM_SR_UIF);
 	if(pointer2 != 0) (*pointer2) ();
-}
+}*/
 
 void TIM3_IRQHandler ( void ){
 	TIM3->SR &= ~(TIM_SR_UIF);

@@ -3,20 +3,20 @@
 #include "Driver_GPIO.h"
 
 // CALLBACK FUNCTION FOR TIMER
-MyGPIO_Struct_TypeDef g;
+MyGPIO_Struct_TypeDef led;
 
 void Callback () {
-	MyGPIO_Toggle(g.GPIO, g.GPIO_Pin);
+	MyGPIO_Toggle(led.GPIO, led.GPIO_Pin);
 }
 
 int main(void)
 {
 	//GPIO Timer
-	/*MyTimer_Struct_TypeDef t;
+	MyTimer_Struct_TypeDef t;
 	MyGPIO_Struct_TypeDef g;
 	
 	//Turn on GPIOA C
-	
+	RCC->APB2ENR |= RCC_APB2ENR_IOPAEN | RCC_APB2ENR_IOPCEN;
 	//PWM out´config
 	led.GPIO = GPIOC;
 	led.GPIO_Conf = Out_PushPull;
@@ -39,12 +39,12 @@ int main(void)
 	
 	//Activate timer and configs
 	MyTimer_ActiveIT(t.Timer, 1, Callback);
-	MyTimer_Base_Start(t.Timer);*/
+	MyTimer_Base_Start(t.Timer);
 	//MyGPIO_Struct_TypeDef g;
-	MyGPIO_Struct_TypeDef b;
+	/*MyGPIO_Struct_TypeDef b;
 	MyTimer_Struct_TypeDef t;
 	
-	RCC->APB2ENR |= RCC_APB2ENR_IOPAEN | RCC_APB2ENR_IOPCEN;
+	
 	
 	g.GPIO = GPIOC;
 	g.GPIO_Conf = Out_PushPull;
@@ -62,7 +62,7 @@ int main(void)
 	MyGPIO_Init(&b);	
 	MyTimer_Base_Init(&t);	
 	MyTimer_ActiveIT(t.Timer,1,Callback);
-	MyTimer_Base_Start(t.Timer);
+	MyTimer_Base_Start(t.Timer);*/
 	
 	while(1){
 		/*if(MyGPIO_Read(b.GPIO,b.GPIO_Pin)){
