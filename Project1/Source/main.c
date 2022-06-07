@@ -5,7 +5,7 @@ void (* pointer) (void);
 
 void Callback(){
 	//toogle bit
-	GPIOA->ODR ^= (0x1 << 5);
+	GPIOC->ODR ^= (0x1 << 10);
 }
 
 void TIM2_IRQHandler(void) {
@@ -53,6 +53,9 @@ int main(void){
 	//GPIOC -> ODR |= (0x1 << 13);
 	//PULLDOWN
 	GPIOC -> ODR &=~ (0x1 << 13);
+	//CONFIG OUT PUSH PULL GPIOC 10
+	GPIOC -> CRH &=~ (0xF << ((10-8) * 4));
+	GPIOC -> CRH |= (0x1 << ((10-8) * 4));	
 	//Enable timer2 Clock
 	RCC -> APB1ENR |= RCC_APB1ENR_TIM2EN;
 	TIM2->ARR=7200;
@@ -65,6 +68,13 @@ int main(void){
 	NVIC_SetPriority(TIM2_IRQn, 1);
 	//Enable interruption
 	NVIC_EnableIRQ(TIM2_IRQn);
+	//Config PWM 
+	TIM2->CR1 |= TIM_CR1_ARPE;
+	TIM2->EGR |= TIM_EGR_UG;
+	TIM2->CCER |= TIM_CCER_CC2E;
+	TIM2->CCMR1 &=~(TIM_CCMR1_OC2M);
+	TIM2->CCMR1 |= (TIM_CCMR1_OC1M_1 | TIM_CCMR1_OC1M_2 | TIM_CCMR1_OC2PE);
+	TIM2->CCR2 = 3600;
 	//Assign callback function
 	pointer = Callback;
 	do {
