@@ -28,4 +28,9 @@ void MyTimer_ActiveIT  (TIM_TypeDef * Timer , char Prio , void (*IT_function ) (
 //PWM
 void MyTimer_PWM_Init (TIM_TypeDef * Timer , char Channel ) ;
 void MyTimer_PWM_ConfigureRatio (TIM_TypeDef * Timer , char Channel, int Ratio ) ;
+
+void TIM1_IRQHandler (void);
+void TIM2_IRQHandler (void);
+void TIM3_IRQHandler (void);
+void TIM4_IRQHandler (void);
 #endif

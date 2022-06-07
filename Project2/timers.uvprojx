@@ -10,7 +10,8 @@
       <TargetName>Simulation</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <uAC6>1</uAC6>
+      <pCCUsed>5060960::V5.06 update 7 (build 960)::.\ARMCC</pCCUsed>
+      <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
           <Device>STM32F103RB</Device>
@@ -312,7 +313,7 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>2</Optim>
+            <Optim>1</Optim>
             <oTime>0</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
@@ -338,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath></IncludePath>
+              <IncludePath>.\Include;..\Drivers\Include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -383,9 +384,9 @@
           <GroupName>Sources</GroupName>
           <Files>
             <File>
-              <FileName>MyTimer.c</FileName>
+              <FileName>main.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Drivers\Source\MyTimer.c</FilePath>
+              <FilePath>.\Source\main.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -393,14 +394,14 @@
           <GroupName>Drivers</GroupName>
           <Files>
             <File>
-              <FileName>Driver_Timer.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\Drivers\Include\Driver_Timer.h</FilePath>
+              <FileName>MyGPIO.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\Source\MyGPIO.c</FilePath>
             </File>
             <File>
-              <FileName>Driver_GPIO.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\Drivers\Include\Driver_GPIO.h</FilePath>
+              <FileName>MyTimer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\Source\MyTimer.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -416,7 +417,8 @@
       <TargetName>Real</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <uAC6>1</uAC6>
+      <pCCUsed>5060960::V5.06 update 7 (build 960)::.\ARMCC</pCCUsed>
+      <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
           <Device>STM32F103RB</Device>
@@ -439,7 +441,7 @@
           <SLE66AMisc></SLE66AMisc>
           <SLE66LinkerMisc></SLE66LinkerMisc>
           <SFDFile>$$Device:STM32F103RB$SVD\STM32F103xx.svd</SFDFile>
-          <bCustSvd>0</bCustSvd>
+          <bCustSvd>1</bCustSvd>
           <UseEnv>0</UseEnv>
           <BinPath></BinPath>
           <IncludePath></IncludePath>
@@ -718,7 +720,7 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>2</Optim>
+            <Optim>1</Optim>
             <oTime>0</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
@@ -744,7 +746,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>.\Include</IncludePath>
+              <IncludePath>..\Drivers\Include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -789,9 +791,9 @@
           <GroupName>Sources</GroupName>
           <Files>
             <File>
-              <FileName>MyTimer.c</FileName>
+              <FileName>main.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Drivers\Source\MyTimer.c</FilePath>
+              <FilePath>.\Source\main.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -799,14 +801,14 @@
           <GroupName>Drivers</GroupName>
           <Files>
             <File>
-              <FileName>Driver_Timer.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\Drivers\Include\Driver_Timer.h</FilePath>
+              <FileName>MyGPIO.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\Source\MyGPIO.c</FilePath>
             </File>
             <File>
-              <FileName>Driver_GPIO.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\Drivers\Include\Driver_GPIO.h</FilePath>
+              <FileName>MyTimer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Drivers\Source\MyTimer.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -823,8 +825,8 @@
   <RTE>
     <apis/>
     <components>
-      <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="5.4.0" condition="ARMv6_7_8-M Device">
-        <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="5.7.0"/>
+      <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="5.5.0" condition="ARMv6_7_8-M Device">
+        <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="5.8.0"/>
         <targetInfos>
           <targetInfo name="Real"/>
           <targetInfo name="Simulation"/>
